@@ -9,7 +9,7 @@ const Form = props => {
 
     const submit = e => {
         e.preventDefault();
-        props.addItem(todo);
+        props.addTodo(todo);
         setTodo('');
     }
 
