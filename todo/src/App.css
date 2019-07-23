@@ -1,12 +1,30 @@
 .App {
   text-align: center;
 }
+input {
+  width: 25%;
+  height: 1.5rem;
+  margin: 0.5rem;
+  font-size: 1.25rem;
+  border-radius: 0.5rem;
+  padding: 0.33rem;
+}
+button {
+  font-size: 1.33rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+button:active {
+  transform: translateY(0.25rem);
+}
+button:focus {
+  outline: none;
+}
 .todoBtn {
   width: 42.5%;
   margin: 0.5rem;
   background: lightslategrey;
-  border: none;
-  border-radius: 0.5rem;
+  /* color: white; */
 }
 .todoBtn:hover {
   background-color: gainsboro;
@@ -14,4 +32,28 @@
 .completed {
   text-decoration: line-through;
   background-color: gray;
+}
+.addBtn, .clearBtn {
+  padding: 0.75rem;
+  color: white;
+}
+.addBtn {
+  background-color: darkgreen;
+}
+.addBtn:hover {
+  background-color: green;
+}
+.clearBtn {
+  background-color: darkred;
+}
+.clearBtn:hover {
+  background-color: red;
+}
+.importantBtn {
+  font-size: 2rem;
+  padding: 1rem;
+  background-color: gray;
+}
+.important {
+  background-color: orange; 
 }

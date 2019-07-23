@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 import './App.css';
 import List from './components/List';
 import Form from './components/Form';
-import { reducer, initialState, ADD_TODO, TOGGLE_TODO, CLEAR_COMPLETED } from './reducers/reducer';
+import { reducer, initialState, ADD_TODO, TOGGLE_TODO, TOGGLE_IMPORTANT, CLEAR_COMPLETED } from './reducers/reducer';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
@@ -16,6 +16,10 @@ function App() {
     dispatch({ type: TOGGLE_TODO, payload: id })
   }
 
+  const toggleImportant = id => {
+    dispatch({ type: TOGGLE_IMPORTANT, payload: id })
+  }
+
   const clearCompleted = () => {
     dispatch({ type: CLEAR_COMPLETED })
   }
@@ -26,11 +30,14 @@ function App() {
       <List 
         todos={state.todos}
         toggleTodo={toggleTodo}
+        toggleImportant={toggleImportant}
       />
       <Form
         addTodo={addTodo} 
       />
-      <button onClick={e => {
+      <button
+        className="clearBtn"
+        onClick={e => {
         e.preventDefault();
         clearCompleted();
       }}>Clear Completed</button>

@@ -21,8 +21,9 @@ const Form = props => {
                 name="todo"
                 value={todo}
                 onChange={handleChanges}
+                autoComplete="off"
             />
-            <button>Add to List</button>
+            <button className="addBtn">Add to List</button>
         </form>
     );
 };

@@ -3,16 +3,19 @@ export const initialState = {
         {
             item: 'Learn about reducers',
             completed: false,
+            important: false,
             id: 3892987589
         },
         {
             item: 'Do the laundry',
             completed: false,
+            important: false,
             id: 3892980817
         },
         {
             item: 'Wash the car',
             completed: false,
+            important: false,
             id: 3892986183
         }
     ]
@@ -21,6 +24,7 @@ export const initialState = {
 export const ADD_TODO = 'ADD_TODO';
 export const TOGGLE_TODO = 'TOGGLE_TODO';
 export const CLEAR_COMPLETED = 'CLEAR_COMPLETED';
+export const TOGGLE_IMPORTANT = 'TOGGLE_IMPORTANT';
 
 
 export const reducer = (state, action) => {
@@ -31,6 +35,7 @@ export const reducer = (state, action) => {
             const newTodo = {
                 item: action.payload,
                 completed: false,
+                important: false,
                 id: Date.now()
             }
             return {
@@ -57,5 +62,18 @@ export const reducer = (state, action) => {
                     return !todo.completed;
                 })
             }
+        case 'TOGGLE_IMPORTANT':
+                return {
+                    ...state,
+                    todos: state.todos.map(todo => {
+                        if(action.payload === todo.id){
+                            return {
+                                ...todo,
+                                important: !todo.important
+                            }
+                        } 
+                        return todo;
+                    })
+                }
     }
 }
