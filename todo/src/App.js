@@ -24,7 +24,6 @@ function App() {
     dispatch({ type: CLEAR_COMPLETED })
   }
 
-  console.log(state);
   return (
     <div className="App">
       <List 
@@ -32,15 +31,19 @@ function App() {
         toggleTodo={toggleTodo}
         toggleImportant={toggleImportant}
       />
-      <Form
-        addTodo={addTodo} 
-      />
-      <button
-        className="clearBtn"
-        onClick={e => {
-        e.preventDefault();
-        clearCompleted();
-      }}>Clear Completed</button>
+      <div className="botContainer">
+        <Form
+          addTodo={addTodo} 
+        />
+      </div>
+        <button
+          className="clearBtn"
+          onClick={e => {
+            e.preventDefault();
+            clearCompleted();
+          }}>
+            Clear Completed
+        </button>
     </div>
   );
 }

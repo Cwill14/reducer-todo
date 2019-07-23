@@ -17,7 +17,7 @@ const Form = props => {
         <form onSubmit={submit}>
             <input 
                 type="text" 
-                placeholder="to-do here"
+                placeholder="task here"
                 name="todo"
                 value={todo}
                 onChange={handleChanges}
