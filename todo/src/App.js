@@ -8,7 +8,6 @@ function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
   
   const addTodo = todo => {
-    // e.preventDefault();
     dispatch({ type: ADD_TODO, payload: todo })
   }
 

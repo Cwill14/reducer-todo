@@ -12,7 +12,6 @@ const List = props => {
     return (
         <div className="list">
             <h1>To-Do List</h1>
-            {/* {props.todos.map(todo => { */}
             {compSortedProps.map(todo => {
                 return <Todo 
                     todo={todo} 

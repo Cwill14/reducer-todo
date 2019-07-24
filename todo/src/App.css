@@ -82,6 +82,9 @@ button:focus {
   padding: 1rem;
   background-color: gray;
 }
+.importantBtn:hover {
+  background-color: gainsboro;
+}
 .important {
   background-color: orange; 
 }
